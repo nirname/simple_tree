@@ -1,0 +1,28 @@
+= ExpandableTree
+
+This project rocks and uses MIT-LICENSE.
+
+It contains simple javascripts, stylesheets and helpers for rendering expandable trees.
+
+== Installation
+
+Write in your Gemfile:
+  gem "expandable_tree", github: "nirname/expandable_tree"
+
+Add this string to your +application.css+
+  //= require expandable_tree/expandable_tree
+
+... and that one to your +application.js+
+  //= require expandable_tree/expandable_tree
+
+== Using
+
+Now you can the followin helpers inside your views:
+* tree
+* node
+
+For example:
+
+== Interaction
+
+You can eas

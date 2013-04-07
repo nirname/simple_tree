@@ -1,0 +1,145 @@
+
+.node {
+  margin-left: 20px;
+  zoom: 1;
+  /* линия слева образуется повторяющимся фоновым рисунком */
+  background-image: url("tree/vertical_line.png");
+  background-position: top left;
+  background-repeat: repeat-y;
+}
+
+/*.node.is-first {
+  background-image: url("half_vertical_line.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}*/
+
+.node.is-last {
+  background-image: url("tree/half_vertical_line.png");
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+/* css-3 */
+/*.descendants > li:first-child {
+  background-image: url("half_vertical_line.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}*/
+
+/* css-3 */
+/*.descendatns > li:last-child {
+  background-image: url("half_vertical_line.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}*/
+
+.node-action {
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+
+.additional-action {
+  margin-left: 5px;
+}
+
+.node-content {
+  margin-left: 20px;
+  min-height: 20px;
+  line-height: 20px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+/* выбранный (под указателем курсора) элемент */
+.node-content.selected {
+  color: white;
+  background-color: #B0B0B0;
+}
+
+/* текущий элемент */
+.node-content.active {
+  color: white;
+  background-color: cornflowerBlue;
+}
+
+/* потомки не имеют отступа отступ в каждом узле собственный */
+.descendants {
+  padding: 0px;
+  margin: 0px;
+}
+
+.descendants > li {
+  list-style-type: none;
+  border-top: 1px dotted;
+}
+
+/* корневые элементы не имеют отступа */
+.roots > .node {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*
+  первый корневой элемент не имеет границы сверху,
+  а также не имеет линии от предыдущего элемента
+*/
+
+
+/* css-3 */
+/*.roots > :first-child {
+  border-top: medium none;
+  background-image: url("first_child_line.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}*/
+
+.roots > .is-first {
+  border-top: medium none;
+  background-image: url("tree/half_vertical_line.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+/*.expand {
+ * is used as selector into "tree.js"  
+}*/
+
+.expand-opened .expand {
+  background-image: url("tree/mines_small.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.expand-closed .expand {
+  background-image: url("tree/plus_small.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.expand-leaf .expand {
+  background-image: url("tree/leaf_small.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.expand-opened .descendants {
+  display: block;
+}
+	 
+.expand-closed .descendants {
+  display: none;
+}
+
+.expand-opened .expand, .expand-closed .expand {
+  cursor: pointer;
+}
+	 
+.expand-leaf .expand {
+  cursor: default;
+}
+
+* html .node-content {
+  height: 20px;
+}
