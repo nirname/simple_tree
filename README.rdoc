@@ -18,8 +18,8 @@ Add this string to your +application.css+
 == Using
 
 Now you can the followin helpers inside your views:
-* tree
-* node
+* simple_tree
+* simple_node
 
 For example (using 'haml'):
 

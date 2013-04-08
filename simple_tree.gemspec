@@ -18,7 +18,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0.0.beta1"
   s.add_dependency "jquery-rails", "~> 2.2.1"
-  #s.add_dependency "sass-rails"
 
-  s.add_development_dependency "sqlite3"
+  #group :assets do
+  #s.add_dependency 'sass-rails',   '~> 4.0.0.beta1'
+  #s.add_dependency 'coffee-rails', '~> 4.0.0.beta1'
+  #end
+
+  #s.add_development_dependency "sqlite3"
 end
