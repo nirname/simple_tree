@@ -1,4 +1,4 @@
-= ExpandableTree
+= Simple Tree
 
 This project rocks and uses MIT-LICENSE.
 
@@ -25,4 +25,4 @@ For example:
 
 == Interaction
 
-You can eas
+

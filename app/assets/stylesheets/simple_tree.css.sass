@@ -1,0 +1,94 @@
+@mixin expand-background($image, $vertical_position: center)
+  :background
+    image: url("simple_tree/#{$image}.png")
+    repeat: no-repeat
+    position: center $vertical_position
+
+@mixin boundary-node-background($vertical_position)
+  :background
+    image: url("simple_tree/half_vertical_line.png")
+    repeat: no-repeat
+    position: left $vertical_position
+
+@mixin first-node
+  @include boundary-node-background(bottom)
+
+@mixin last-node
+  @include boundary-node-background(top)
+
+@mixin first-level-nodes
+  > .node
+    //&:first-child, &.is-first
+    //  @include first-node
+    &:last-child, &.is-last
+      @include last-node
+
+@mixin no-extra-space
+  padding: 0px
+  margin: 0px
+
+.simple-tree
+  @include no-extra-space
+  // styles for all nodes
+  .node
+    list-style-type: none
+    margin-left: 20px
+    zoom: 1
+    border-top: 1px dashed #A0A0A0
+    :background
+      image: url("simple_tree/vertical_line.png")
+      repeat: repeat-y
+      position: left top
+    .node-action
+      width: 20px
+      height: 20px
+      float: left
+    .node-content
+      margin-left: 20px
+      min-height: 20px
+      line-height: 20px
+      padding-left: 5px
+      cursor: pointer
+
+  // styles for the first level nodes
+  @include first-level-nodes
+  > .node
+    @include no-extra-space
+    &:first-child, &.is-first
+      border-top: medium none
+      //&.expand-opened
+      //  > .expand
+      //    @include expand-background(mines_small_blank, top)
+      //&.expand-closed
+      //  > .expand
+      //    @include expand-background(plus_small_blank, top)
+      //&.expand-leaf
+      //  > .expand
+      //    @include expand-background(leaf_small_blank, top)
+
+  .descendants
+    @include no-extra-space
+    @include first-level-nodes
+
+  // expand icon images
+  .expand-opened
+    .expand
+      @include expand-background(mines_small)
+      cursor: pointer
+    .descendants
+      display: block
+
+  .expand-closed
+    .expand
+      @include expand-background(plus_small)
+      cursor: pointer
+    .descendants
+      display: none
+
+  .expand-leaf
+    .expand
+      @include expand-background(leaf_small)
+      cursor: default
+
+* html .simple_tree .node-content
+  line-height: 20px
