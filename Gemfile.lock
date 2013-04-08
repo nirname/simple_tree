@@ -93,7 +93,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jquery-rails (~> 2.2.1)
+  jquery-rails
   rails (~> 4.0.0.beta1)
   simple_tree!
   sqlite3

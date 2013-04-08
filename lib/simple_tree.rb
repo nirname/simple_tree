@@ -1,4 +1,4 @@
-require "elastic_meta_search/view_helpers"
+require "simple_tree/view_helpers"
 
 module SimpleTree
 end
