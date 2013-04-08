@@ -1,145 +1,59 @@
-
-.node {
-  margin-left: 20px;
-  zoom: 1;
-  /* линия слева образуется повторяющимся фоновым рисунком */
-  background-image: url("tree/vertical_line.png");
-  background-position: top left;
-  background-repeat: repeat-y;
-}
-
-/*.node.is-first {
-  background-image: url("half_vertical_line.png");
-  background-position: bottom left;
-  background-repeat: no-repeat;
-}*/
-
-.node.is-last {
-  background-image: url("tree/half_vertical_line.png");
-  background-position: top left;
-  background-repeat: no-repeat;
-}
-
-/* css-3 */
-/*.descendants > li:first-child {
-  background-image: url("half_vertical_line.png");
-  background-position: bottom left;
-  background-repeat: no-repeat;
-}*/
-
-/* css-3 */
-/*.descendatns > li:last-child {
-  background-image: url("half_vertical_line.png");
-  background-position: bottom left;
-  background-repeat: no-repeat;
-}*/
-
-.node-action {
-  width: 20px;
-  height: 20px;
-  float: left;
-}
-
-.additional-action {
-  margin-left: 5px;
-}
-
-.node-content {
-  margin-left: 20px;
-  min-height: 20px;
-  line-height: 20px;
-  padding-left: 5px;
-  cursor: pointer;
-}
-
-/* выбранный (под указателем курсора) элемент */
-.node-content.selected {
-  color: white;
-  background-color: #B0B0B0;
-}
-
-/* текущий элемент */
-.node-content.active {
-  color: white;
-  background-color: cornflowerBlue;
-}
-
-/* потомки не имеют отступа отступ в каждом узле собственный */
-.descendants {
+.simple-tree {
   padding: 0px;
-  margin: 0px;
-}
+  margin: 0px; }
+  .simple-tree .node {
+    list-style-type: none;
+    margin-left: 20px;
+    zoom: 1;
+    border-top: 1px dashed #a0a0a0;
+    background-image: url("simple_tree/vertical_line.png");
+    background-repeat: repeat-y;
+    background-position: left top; }
+    .simple-tree .node .node-action {
+      width: 20px;
+      height: 20px;
+      float: left; }
+    .simple-tree .node .node-content {
+      margin-left: 20px;
+      min-height: 20px;
+      line-height: 20px;
+      padding-left: 5px;
+      cursor: pointer; }
+  .simple-tree > .node:last-child, .simple-tree > .node.is-last {
+    background-image: url("simple_tree/half_vertical_line.png");
+    background-repeat: no-repeat;
+    background-position: left top; }
+  .simple-tree > .node {
+    padding: 0px;
+    margin: 0px; }
+    .simple-tree > .node:first-child, .simple-tree > .node.is-first {
+      border-top: medium none; }
+  .simple-tree .descendants {
+    padding: 0px;
+    margin: 0px; }
+    .simple-tree .descendants > .node:last-child, .simple-tree .descendants > .node.is-last {
+      background-image: url("simple_tree/half_vertical_line.png");
+      background-repeat: no-repeat;
+      background-position: left top; }
+  .simple-tree .expand-opened .expand {
+    background-image: url("simple_tree/mines_small.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer; }
+  .simple-tree .expand-opened .descendants {
+    display: block; }
+  .simple-tree .expand-closed .expand {
+    background-image: url("simple_tree/plus_small.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer; }
+  .simple-tree .expand-closed .descendants {
+    display: none; }
+  .simple-tree .expand-leaf .expand {
+    background-image: url("simple_tree/leaf_small.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: default; }
 
-.descendants > li {
-  list-style-type: none;
-  border-top: 1px dotted;
-}
-
-/* корневые элементы не имеют отступа */
-.roots > .node {
-  margin: 0px;
-  padding: 0px;
-}
-
-/*
-  первый корневой элемент не имеет границы сверху,
-  а также не имеет линии от предыдущего элемента
-*/
-
-
-/* css-3 */
-/*.roots > :first-child {
-  border-top: medium none;
-  background-image: url("first_child_line.png");
-  background-position: bottom left;
-  background-repeat: no-repeat;
-}*/
-
-.roots > .is-first {
-  border-top: medium none;
-  background-image: url("tree/half_vertical_line.png");
-  background-position: bottom left;
-  background-repeat: no-repeat;
-}
-
-/*.expand {
- * is used as selector into "tree.js"  
-}*/
-
-.expand-opened .expand {
-  background-image: url("tree/mines_small.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.expand-closed .expand {
-  background-image: url("tree/plus_small.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.expand-leaf .expand {
-  background-image: url("tree/leaf_small.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.expand-opened .descendants {
-  display: block;
-}
-	 
-.expand-closed .descendants {
-  display: none;
-}
-
-.expand-opened .expand, .expand-closed .expand {
-  cursor: pointer;
-}
-	 
-.expand-leaf .expand {
-  cursor: default;
-}
-
-* html .node-content {
-  height: 20px;
-}
+* html .simple_tree .node-content {
+  line-height: 20px; }

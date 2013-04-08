@@ -1,6 +1,6 @@
 module SimpleTreeHelper
 
-  module ViewHelper
+  module ViewHelpers
 
     def simple_tree(options = {}, &block)
       if block_given?
