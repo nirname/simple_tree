@@ -1,5 +1,5 @@
 $ ->
-  $(".tree").on "click", ".expand", ->
+  $(document).on "click", ".simple-tree .expand", (element)->
     parent = $(this).parent()
     if parent.hasClass("expand-closed")
       parent.removeClass("expand-closed").addClass("expand-opened");
