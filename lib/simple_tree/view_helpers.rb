@@ -1,4 +1,4 @@
-module SimpleTreeHelper
+module SimpleTree
 
   module ViewHelpers
 
