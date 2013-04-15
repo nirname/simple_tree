@@ -17,7 +17,7 @@ Add this string to your +application.css+
 
 == Using
 
-Now you can the followin helpers inside your views:
+Now you can use the followin helpers inside your views:
 * simple_tree
 * simple_node
 

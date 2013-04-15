@@ -14,10 +14,9 @@
       height: 20px;
       float: left; }
     .simple-tree .node .node-content {
-      margin-left: 20px;
+      margin-left: 25px;
       min-height: 20px;
       line-height: 20px;
-      padding-left: 5px;
       cursor: pointer; }
   .simple-tree > .node:last-child, .simple-tree > .node.is-last {
     background-image: url("simple_tree/half_vertical_line.png");
@@ -55,5 +54,5 @@
     background-position: center center;
     cursor: default; }
 
-* html .simple_tree .node-content {
+* html .simple-tree .node-content {
   line-height: 20px; }

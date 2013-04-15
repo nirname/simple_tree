@@ -22,12 +22,14 @@ module SimpleTree
           #{ block_content }
         </ul>"
         css_expand_class = "expand-closed"
+        css_icon_class = "icon-plus"
       else
         css_expand_class = "expand-leaf"
+        css_icon_class = ""
       end
 
       "<li class='node #{ css_expand_class } #{ options[:class] }' #{ hash_to_html_options(options.except(:class)) }>
-        <div class='node-action expand'></div>
+        <div class='node-action expand #{ css_icon_class }'></div>
         <div class='node-content'>
           #{ content }
         </div>

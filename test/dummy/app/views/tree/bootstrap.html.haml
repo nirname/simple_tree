@@ -1,0 +1,26 @@
+%h1
+  Project hierarcy bootstrap style
+  (
+  = link_to("simple style", tree_simple_path)
+  )
+
+-# Use simple_tree and simple_node helpers
+
+-# Look for source
+
+= simple_tree class: "simple-tree-bootstrap" do
+  = draw_heirarcy
+
+-# ... or you can just do it manually
+
+-#= simple_tree do
+-#  = simple_node "app" do
+-#    = simple_node "assets" do
+-#      = simple_node "images"
+-#      = simple_node "javascripts" do
+-#        = simple_node "application.js"
+-#        = simple_node "tree.js"
+-#      = simple_node "stylesheets" do
+-#        = simple_node "application.css"
+-#        = simple_node "tree.css"
+-# and so on ...

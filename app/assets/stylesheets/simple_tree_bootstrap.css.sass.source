@@ -1,0 +1,108 @@
+$height: 30px
+$indent: 30px
+$additive: 10px
+
+//$glyphicons-halflings-position
+
+@mixin expand-background-bootstrap
+  //background-image: url("../img/glyphicons-halflings-white.png");
+  background-image: none
+  text-align: center
+  padding-top: 8px
+  height: 22px
+
+@mixin expand-background($image)
+  :background
+    image: url("simple_tree/#{$image}.png")
+    position: center center
+    repeat: no-repeat
+
+
+@mixin boundary-node-background($vertical_position)
+  :background
+    image: none
+    //image: url("simple_tree/half_vertical_line.png")
+    //position: left $vertical_position
+    //repeat: no-repeat
+
+@mixin first-node
+  @include boundary-node-background(bottom)
+
+@mixin last-node
+  @include boundary-node-background(top)
+
+@mixin first-level-nodes
+  > .node
+    //&:first-child, &.is-first
+    //  @include first-node
+    &:last-child, &.is-last
+      @include last-node
+
+@mixin bootstrap-wrapper
+  border: 1px solid #DDDDDD
+  border-radius: 4px 4px 4px 4px
+  background-color: white
+
+@mixin no-extra-space
+  padding: 0px
+  margin: 0px
+
+.simple-tree.simple-tree-bootstrap
+  @include no-extra-space
+  // styles for all nodes
+  .node
+    list-style-type: none
+    margin-left: $indent + $additive
+    margin-top: 5px
+    zoom: 1
+    border-top: none
+    :background
+      image: url("simple_tree/vertical_line.png")
+      position: 6px top
+      repeat: repeat-y
+    .node-action
+      @include bootstrap-wrapper
+      width: $height
+      height: $height
+      float: left
+    .node-content
+      @include bootstrap-wrapper
+      padding-left: 10px
+      margin-left: $indent + $additive
+      min-height: $height
+      line-height: $height
+      cursor: pointer
+
+  // styles for the first level nodes
+  @include first-level-nodes
+  > .node
+    margin-left: 0px
+    &:first-child, &.is-first
+      margin-top: 0
+
+  .descendants
+    @include no-extra-space
+    @include first-level-nodes
+
+  // expand icon images
+  .expand-opened
+    .expand
+      @include expand-background-bootstrap
+      cursor: pointer
+    .descendants
+      display: block
+
+  .expand-closed
+    .expand
+      @include expand-background-bootstrap
+      cursor: pointer
+    .descendants
+      display: none
+
+  .expand-leaf
+    .expand
+      @include expand-background(dot)
+      cursor: default
+
+* html .simple-tree.simple-tree-bootstrap .node-content
+  line-height: $height
