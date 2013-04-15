@@ -8,9 +8,9 @@ $ ->
 
     if $(this).closest(".simple-tree").hasClass("simple-tree-bootstrap")
       if parent.hasClass("expand-closed")
-        $(this).removeClass("icon-mines").addClass("icon-plus");
+        $(this).removeClass("icon-minus").addClass("icon-plus");
       else if parent.hasClass("expand-opened")
-        $(this).removeClass("icon-plus").addClass("icon-mines");
+        $(this).removeClass("icon-plus").addClass("icon-minus");
 
 
 #$.fn.tree = function() {
