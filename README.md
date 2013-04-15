@@ -56,6 +56,8 @@ For example (using 'haml'):
 
 ## Customizing
 
+### HTML options
+
 You are able to pass additional HTML options to your tree and its' nodes by passing them as a hash to your helper's calls:
 
 ```haml
@@ -63,7 +65,19 @@ You are able to pass additional HTML options to your tree and its' nodes by pass
   = node "My node", "data-id" => 1
 ```
 
-If you are using bootstrap and want to see similar styled tree, just add the `simple-tree-bootstrap` class as an option:
+### Bootstrap
+
+If you are using `bootstrap` (check your `Gemfile`):
+```ruby
+gem "twitter-bootstrap-rails"
+```
+... and want to see similar styled tree add this string to your `application.css`
+```css
+/*
+*= require simple_tree_bootstrap
+*/
+```
+... then add the `simple-tree-bootstrap` class as an option:
 ```haml
 = simple_tree class: "simple-tree-bootstrap" do
 ```
