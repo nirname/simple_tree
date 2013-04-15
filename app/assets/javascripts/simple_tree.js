@@ -10,9 +10,9 @@ $(function() {
     }
     if ($(this).closest(".simple-tree").hasClass("simple-tree-bootstrap")) {
       if (parent.hasClass("expand-closed")) {
-        return $(this).removeClass("icon-mines").addClass("icon-plus");
+        return $(this).removeClass("icon-minus").addClass("icon-plus");
       } else if (parent.hasClass("expand-opened")) {
-        return $(this).removeClass("icon-plus").addClass("icon-mines");
+        return $(this).removeClass("icon-plus").addClass("icon-minus");
       }
     }
   });
