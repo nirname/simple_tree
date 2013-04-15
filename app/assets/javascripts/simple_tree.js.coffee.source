@@ -6,6 +6,13 @@ $ ->
     else if (parent.hasClass("expand-opened"))
       parent.removeClass("expand-opened").addClass("expand-closed");
 
+    if $(this).closest(".simple-tree").hasClass("simple-tree-bootstrap")
+      if parent.hasClass("expand-closed")
+        $(this).removeClass("icon-mines").addClass("icon-plus");
+      else if parent.hasClass("expand-opened")
+        $(this).removeClass("icon-plus").addClass("icon-mines");
+
+
 #$.fn.tree = function() {
 #  $(this).find(".expand").click(function() {
 #    var parent = $(this).parent();

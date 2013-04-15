@@ -1,3 +1,6 @@
+$height: 20px
+$indent: 20px
+
 @mixin expand-background($image, $vertical_position: center)
   :background
     image: url("simple_tree/#{$image}.png")
@@ -32,7 +35,7 @@
   // styles for all nodes
   .node
     list-style-type: none
-    margin-left: 20px
+    margin-left: $indent
     zoom: 1
     border-top: 1px dashed #A0A0A0
     :background
@@ -40,14 +43,13 @@
       repeat: repeat-y
       position: left top
     .node-action
-      width: 20px
-      height: 20px
+      width: $height
+      height: $height
       float: left
     .node-content
-      margin-left: 20px
-      min-height: 20px
-      line-height: 20px
-      padding-left: 5px
+      margin-left: $indent + 5px
+      min-height: $height
+      line-height: $height
       cursor: pointer
 
   // styles for the first level nodes
@@ -90,5 +92,5 @@
       @include expand-background(leaf_small)
       cursor: default
 
-* html .simple_tree .node-content
-  line-height: 20px
+* html .simple-tree .node-content
+  line-height: $height
