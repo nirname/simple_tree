@@ -86,7 +86,7 @@ $border-width: 1px
         @include node-button
         float: right
         margin-right: $distance
-        &:first-child
+        &:first-child, &:first-of-type, &.is-first
           margin-right: 0
 
       .btn-group-tree

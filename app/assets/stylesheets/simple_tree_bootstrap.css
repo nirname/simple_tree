@@ -30,7 +30,7 @@
         width: 20px;
         float: right;
         margin-right: 5px; }
-        .simple-tree.simple-tree-bootstrap .node .node-content .btn-tree:first-child {
+        .simple-tree.simple-tree-bootstrap .node .node-content .btn-tree:first-child, .simple-tree.simple-tree-bootstrap .node .node-content .btn-tree:first-of-type, .simple-tree.simple-tree-bootstrap .node .node-content .btn-tree.is-first {
           margin-right: 0; }
       .simple-tree.simple-tree-bootstrap .node .node-content .btn-group-tree {
         float: right; }
