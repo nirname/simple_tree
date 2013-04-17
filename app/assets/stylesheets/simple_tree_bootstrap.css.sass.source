@@ -1,7 +1,8 @@
 $height: 30px
 $indent: 30px
 $distance: 5px
-
+$node-content-padding: 10px
+$border-width: 1px
 //$glyphicons-halflings-position
 
 @mixin expand-background-bootstrap
@@ -9,7 +10,7 @@ $distance: 5px
   background-image: none
   text-align: center
   padding-top: 8px
-  height: 22px
+  height: $height - 8px
 
 @mixin expand-background($image)
   :background
@@ -39,41 +40,59 @@ $distance: 5px
       @include last-node
 
 @mixin bootstrap-wrapper
-  border: 1px solid #DDDDDD
-  border-radius: 4px 4px 4px 4px
-  background-color: white
+  border: $border-width solid #DDDDDD
+  border-radius: 5px
+  //background-color: white
 
 @mixin no-extra-space
   padding: 0px
   margin: 0px
+
+@mixin node-button
+  padding: 4px
+  width: 20px
 
 .simple-tree.simple-tree-bootstrap
   @include no-extra-space
   // styles for all nodes
   .node
     list-style-type: none
-    margin-left: $indent + 2px + $distance
+    margin-left: $indent + ($border-width * 2) + $distance
     margin-top: $distance
     zoom: 1
     border-top: none
     :background
+      //image: url("simple_tree/dot.png")
       image: url("simple_tree/vertical_line.png")
       position: 6px top
       repeat: repeat-y
     .node-action
       @include bootstrap-wrapper
+      background-color: white
       width: $height
       height: $height
       float: left
     .node-content
       @include bootstrap-wrapper
       //display: inline-block
-      padding-left: 10px
-      padding-right: 10px
-      margin-left: $indent + 2px + $distance
-      min-height: $height
+      padding-left: $node-content-padding
+      //padding-right: $node-content-padding
+      margin-left: $indent + ($border-width * 2) + $distance
+      height: $height
       line-height: $height
       cursor: pointer
+
+      .btn-tree
+        @include node-button
+        float: right
+        margin-right: $distance
+        &:first-child
+          margin-right: 0
+
+      .btn-group-tree
+        float: right
+        .btn
+          @include node-button
 
   // styles for the first level nodes
   @include first-level-nodes
