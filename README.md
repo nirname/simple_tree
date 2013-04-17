@@ -67,7 +67,7 @@ You are able to pass additional HTML options to your tree and its' nodes by pass
 
 ### Bootstrap
 
-If you are using `bootstrap` (check your `Gemfile`):
+If you are using [`bootstrap`](https://github.com/twitter/bootstrap "Twitter Bootstrap on GitHub") (check your `Gemfile`):
 ```ruby
 gem "twitter-bootstrap-rails"
 ```
@@ -81,6 +81,17 @@ gem "twitter-bootstrap-rails"
 ```haml
 = simple_tree class: "simple-tree-bootstrap" do
 ```
+
+#### Node buttons
+
+You can add some buttons to nodes by passing html code to node content.
+Use `.btn-tree` and `.btn-group-tree` classes with [`bootstrap`](https://github.com/twitter/bootstrap "Twitter Bootstrap on GitHub")
+`.btn` and `.btn-group` classes to get pretty style inline buttons, fox example:
+```haml
+.btn.btn-tree
+.btn-group.btn-group-tree
+```
+You can still combine it with different classes such as `.btn-primary` and so on.
 
 ## Interaction
 
