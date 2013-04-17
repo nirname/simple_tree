@@ -3,13 +3,12 @@
   (
   = link_to("simple style", tree_simple_path)
   )
-
--# Use simple_tree and simple_node helpers
-
--# Look for source
-
-= simple_tree class: "simple-tree-bootstrap" do
-  = draw_heirarcy
+.row-fluid
+  .span6
+    -# Use simple_tree and simple_node helpers
+    -# Look for source
+    = simple_tree class: "simple-tree-bootstrap" do
+      = draw_heirarcy
 
 -# ... or you can just do it manually
 

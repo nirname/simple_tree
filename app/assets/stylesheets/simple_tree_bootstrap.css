@@ -3,7 +3,7 @@
   margin: 0px; }
   .simple-tree.simple-tree-bootstrap .node {
     list-style-type: none;
-    margin-left: 40px;
+    margin-left: 37px;
     margin-top: 5px;
     zoom: 1;
     border-top: none;
@@ -22,7 +22,8 @@
       border-radius: 4px 4px 4px 4px;
       background-color: white;
       padding-left: 10px;
-      margin-left: 40px;
+      padding-right: 10px;
+      margin-left: 37px;
       min-height: 30px;
       line-height: 30px;
       cursor: pointer; }

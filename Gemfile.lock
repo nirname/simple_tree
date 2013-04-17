@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_tree (0.0.1)
+    simple_tree (0.0.4)
       jquery-rails (~> 2.2.1)
       rails (~> 4.0.0.beta1)
 

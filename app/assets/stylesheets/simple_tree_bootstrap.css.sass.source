@@ -1,6 +1,6 @@
 $height: 30px
 $indent: 30px
-$additive: 10px
+$distance: 5px
 
 //$glyphicons-halflings-position
 
@@ -52,8 +52,8 @@ $additive: 10px
   // styles for all nodes
   .node
     list-style-type: none
-    margin-left: $indent + $additive
-    margin-top: 5px
+    margin-left: $indent + 2px + $distance
+    margin-top: $distance
     zoom: 1
     border-top: none
     :background
@@ -67,8 +67,10 @@ $additive: 10px
       float: left
     .node-content
       @include bootstrap-wrapper
+      //display: inline-block
       padding-left: 10px
-      margin-left: $indent + $additive
+      padding-right: 10px
+      margin-left: $indent + 2px + $distance
       min-height: $height
       line-height: $height
       cursor: pointer

@@ -67,7 +67,7 @@ You are able to pass additional HTML options to your tree and its' nodes by pass
 
 ### Bootstrap
 
-If you are using `bootstrap` (check your `Gemfile`):
+If you are using [`bootstrap`](https://github.com/twitter/bootstrap "Twitter Bootstrap on GitHub") (check your `Gemfile`):
 ```ruby
 gem "twitter-bootstrap-rails"
 ```
