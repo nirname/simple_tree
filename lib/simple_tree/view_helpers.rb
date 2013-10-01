@@ -23,8 +23,13 @@ module SimpleTree
         <ul class='descendants'>
           #{ block_content }
         </ul>"
-        css_expand_class = (options[:opened] == true) ? "expand-opened" : "expand-closed"
-        css_icon_class = "icon-plus"
+        if (options[:opened] == true)
+          css_expand_class = "expand-opened"
+          css_icon_class = "icon-minus"
+        else
+          css_expand_class = "expand-closed"
+          css_icon_class = "icon-plus"
+        end
       else
         css_expand_class = "expand-leaf"
         css_icon_class = ""
