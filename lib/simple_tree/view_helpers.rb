@@ -15,13 +15,15 @@ module SimpleTree
 
     def simple_node(content, options = {}, &block)
 
+      options = HashWithIndifferentAccess.new(options)
+
       if block_given?
         block_content = capture &block
         descendatns = "
         <ul class='descendants'>
           #{ block_content }
         </ul>"
-        css_expand_class = "expand-closed"
+        css_expand_class = (options[:opened] == true) ? "expand-opened" : "expand-closed"
         css_icon_class = "icon-plus"
       else
         css_expand_class = "expand-leaf"

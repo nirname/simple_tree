@@ -31,9 +31,9 @@ For example (using 'haml'):
 
 ```haml
 = simple_tree do
-  = node "First node" do
-    = node "Sub-node"
-  = node "Second node"
+  = simple_node "First node" do
+    = simple_node "Sub-node"
+  = simple_node "Second node"
 ```
 
 ... produces html code that will be similar to the one below:
@@ -53,6 +53,19 @@ For example (using 'haml'):
   </li>
 </ul>
 ```
+
+You can pass `:opened` option to node:
+
+```haml
+= simple_tree do
+  = simple_node "Opened node", opened: true do
+    = simple_node "Leaf 1"
+  = simple_node "Closed node" do
+    = simple_node "Leaf 2"
+```
+
+By default node is supposed to be closed.
+
 
 ## Customizing
 
