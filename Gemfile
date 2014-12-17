@@ -13,7 +13,7 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-gem "rails", "~> 4.0.0.beta1"
+gem "rails", "~> 4.0"
 gem "sqlite3"
 
 gem "jquery-rails", "~> 2.2.1"
